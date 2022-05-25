@@ -7,6 +7,7 @@ import { data3, work_data } from "./data";
 import moment from "moment";
 import { useState } from "react";
 import TeamEfficiency from "./components/TeamEfficiency";
+import EfficiencyWeek from "./components/EfficiencyWeek";
 
 function App() {
     // const [interval, set_interval] = useState("weekly");
@@ -51,6 +52,7 @@ function App() {
                 <div className="contained efficiency-week">
                     <div className="heading">Efficiency Week</div>
                     <h1 style={{ color: "orange" }}>WIP</h1>
+                    <EfficiencyWeek data={work_data} date={date} />
                 </div>
                 <div className="contained ftes">
                     <div className="heading">FTEs</div>

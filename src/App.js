@@ -1,8 +1,9 @@
 import "./App.css";
 import FTES from "./components/FTES";
 import CostVsGoal from "./components/ProductionCost";
+import ProductionHours from "./components/ProductionHours";
 import QuantityProduced from "./components/QuantityProduced";
-import { data3 } from "./data";
+import { data3, work_data } from "./data";
 
 function App() {
     return (
@@ -17,6 +18,7 @@ function App() {
             </div>
             <div className="contained production-hours">
                 <div className="heading">Production Hours</div>
+                <ProductionHours data={work_data} />
             </div>
             <div className="contained team-efficiency">
                 <div className="heading">Team efficiency</div>

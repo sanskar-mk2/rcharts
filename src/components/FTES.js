@@ -33,7 +33,7 @@ function FTES(props) {
     return (
         <ResponsiveContainer width="100%" height="80%">
             <LineChart
-                data={data.slice(date, date+7)}
+                data={data.slice(date, date + 7)}
                 margin={{ top: 5, right: 30, left: 20, bottom: 5 }}
             >
                 <CartesianGrid strokeDasharray="1 1" />
@@ -46,14 +46,14 @@ function FTES(props) {
                     dataKey="fte"
                     strokeWidth={3}
                     stroke={colors.var9}
-                    label={<CustomizedLabel stroke={colors.var7} />}
+                    label={<CustomizedLabel stroke={colors.var0} />}
                 />
                 <Line
                     type="monotone"
                     dataKey="goal"
                     strokeWidth={3}
                     stroke={colors.var12}
-                    label={<CustomizedLabel stroke={colors.var7} />}
+                    label={<CustomizedLabel stroke={colors.var0} />}
                 />
             </LineChart>
         </ResponsiveContainer>

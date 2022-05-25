@@ -47,14 +47,14 @@ function ProductionCost(props) {
                     dataKey="production_cost"
                     strokeWidth={3}
                     stroke={colors.var9}
-                    label={<CustomizedLabel stroke={colors.var7} />}
+                    label={<CustomizedLabel stroke={colors.var0} />}
                 />
                 <Line
                     type="monotone"
                     dataKey="production_goal"
                     strokeWidth={3}
                     stroke={colors.var12}
-                    label={<CustomizedLabel stroke={colors.var7} />}
+                    label={<CustomizedLabel stroke={colors.var0} />}
                 />
             </LineChart>
         </ResponsiveContainer>

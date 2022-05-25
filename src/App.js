@@ -6,6 +6,7 @@ import QuantityProduced from "./components/QuantityProduced";
 import { data3, work_data } from "./data";
 import moment from "moment";
 import { useState } from "react";
+import TeamEfficiency from "./components/TeamEfficiency";
 
 function App() {
     // const [interval, set_interval] = useState("weekly");
@@ -28,9 +29,7 @@ function App() {
                         onChange={(e) => set_date(e.target.value)}
                     ></input>
                     <select>
-                        <option value="weekly">
-                            Weekly
-                        </option>
+                        <option value="weekly">Weekly</option>
                     </select>
                 </div>
                 <div className="contained production-cost">
@@ -47,11 +46,11 @@ function App() {
                 </div>
                 <div className="contained team-efficiency">
                     <div className="heading">Team Efficiency</div>
-                    <h1 style={{color: "orange"}}>WIP</h1>
+                    <TeamEfficiency data={work_data} date={date} />
                 </div>
                 <div className="contained efficiency-week">
                     <div className="heading">Efficiency Week</div>
-                    <h1 style={{color: "orange"}}>WIP</h1>
+                    <h1 style={{ color: "orange" }}>WIP</h1>
                 </div>
                 <div className="contained ftes">
                     <div className="heading">FTEs</div>

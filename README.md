@@ -191,3 +191,10 @@ TypeError: 'int' object is not iterable
 ...
 >>> data
 ```
+
+```
+>>> for i in range(len(data)):
+...     for j in range(10):
+...             data[i][f"team{j}"] = {"actual": random.randint(292, 442), "prod": random.randint(257, 425)}
+...
+```

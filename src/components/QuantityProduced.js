@@ -46,14 +46,14 @@ function QuantityProduced(props) {
                     dataKey="quantity_actual"
                     strokeWidth={3}
                     stroke={colors.var9}
-                    label={<CustomizedLabel stroke={colors.var7} />}
+                    label={<CustomizedLabel stroke={colors.var0} />}
                 />
                 <Line
                     type="monotone"
                     dataKey="quantity_goal"
                     strokeWidth={3}
                     stroke={colors.var12}
-                    label={<CustomizedLabel stroke={colors.var7} />}
+                    label={<CustomizedLabel stroke={colors.var0} />}
                 />
             </LineChart>
         </ResponsiveContainer>

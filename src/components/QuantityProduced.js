@@ -6,9 +6,11 @@ import {
     Tooltip,
     Legend,
     Line,
+    ResponsiveContainer,
 } from "recharts";
 import moment from "moment";
 import { PureComponent, useEffect, useState } from "react";
+import { colors } from "../colors";
 
 class CustomizedLabel extends PureComponent {
     render() {
@@ -29,9 +31,8 @@ class CustomizedLabel extends PureComponent {
     }
 }
 
-function CostVsGoal(props) {
+function QuantityProduced(props) {
     const [data, set_data] = useState(props.data);
-    const [interval, set_interval] = useState(5);
 
     useEffect(() => {
         const mapped = props.data.map((e) => ({
@@ -42,21 +43,9 @@ function CostVsGoal(props) {
     }, [props]);
 
     return (
-        <div>
-            <label htmlFor="interval">Interval</label>
-            <input
-                id="interval"
-                onChange={(e) => set_interval(e.target.value)}
-                type="range"
-                min="5"
-                max="30"
-                value={interval}
-            ></input>
-            {interval}
+        <ResponsiveContainer width="100%" height="80%">
             <LineChart
-                width={1000}
-                height={600}
-                data={data.slice(0, interval)}
+                data={data.slice(0, 7)}
                 margin={{ top: 5, right: 30, left: 20, bottom: 5 }}
             >
                 <CartesianGrid strokeDasharray="1 1" />
@@ -66,21 +55,21 @@ function CostVsGoal(props) {
                 <Legend />
                 <Line
                     type="monotone"
-                    dataKey="cost"
+                    dataKey="quantity_actual"
                     strokeWidth={3}
-                    stroke="#FFA500"
+                    stroke={colors.var9}
                     label={<CustomizedLabel />}
                 />
                 <Line
                     type="monotone"
-                    dataKey="goal"
+                    dataKey="quantity_goal"
                     strokeWidth={3}
-                    stroke="#0000FF"
+                    stroke={colors.var12}
                     label={<CustomizedLabel />}
                 />
             </LineChart>
-        </div>
+        </ResponsiveContainer>
     );
 }
 
-export default CostVsGoal;
+export default QuantityProduced;

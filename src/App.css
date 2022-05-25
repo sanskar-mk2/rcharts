@@ -1,14 +1,98 @@
 @import url('https://fonts.googleapis.com/css2?family=Nunito:wght@200&display=swap');
 
+:root {
+    --var0: #000000;
+    --var1: #1D2B53;
+    --var2: #7E2553;
+    --var3: #008751;
+    --var4: #AB5236;
+    --var5: #5F574F;
+    --var6: #C2C3C7;
+    --var7: #FFF1E8;
+    --var8: #FF004D;
+    --var9: #FFA300;
+    --var10: #FFEC27;
+    --var11: #00E436;
+    --var12: #29ADFF;
+    --var13: #83769C;
+    --var14: #FF77A8;
+    --var15: #FFCCAA;
+
+}
+
+html, body {
+    margin: 0;
+    padding: 0;
+}
+
+* {
+    box-sizing: border-box;
+}
+
 body {
+    height: 100vh;
+    width: 100vw;
     font-family: 'Nunito', sans-serif;
+    max-width: 100%;
+    overflow: hidden;
 }
 
-.f {
+#root {
+    width: 100%;
+    height: 100%;
+}
+
+.container {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-template-rows: 1fr 1fr;
+    gap: 0px 0px;
+    grid-auto-flow: row;
+    grid-template-areas:
+        "production-cost quantity-produced production-hours"
+        "team-efficiency efficiency-week ftes";
+    width: 100%;
+    height: 100%;
+}
+
+.heading {
+    background-color: var(--var14);
+    color: var(--var7);
+    font-weight: bold;
+    font-size: x-large;
+    text-align: center;
+    padding: 2px;
+}
+
+.contained {
+    border: 1px dotted var(--var2);
+    height: 100%;
+    width: 100%;
     display: flex;
-    justify-content: space-around;
+    flex-direction: column;
+    justify-content: space-between;
 }
 
-.f div {
-    align-self: center;
+.production-cost {
+    grid-area: production-cost;
+}
+
+.quantity-produced {
+    grid-area: quantity-produced;
+}
+
+.production-hours {
+    grid-area: production-hours;
+}
+
+.team-efficiency {
+    grid-area: team-efficiency;
+}
+
+.efficiency-week {
+    grid-area: efficiency-week;
+}
+
+.ftes {
+    grid-area: ftes;
 }

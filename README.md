@@ -77,3 +77,10 @@ def fs(a, b, c):
 ",".join([fs(i, random.randint(100, 250), random.randint(100, 250)) for i in range(1, 31)])
 
 ```
+
+```
+>>> def fs(a, b, c, d, e, f, g, m):
+...     return f'{{date: new Date("2022-{m}-{a}"), production_cost: {b}, production_goal: {c}, quantity_goal: {d}, quantity_actual: {e}, fte: {f}, goal: {g} }}'
+...
+>>> ",".join([fs(i, random.randint(586, 635), 524, 750, random.randint(583, 910), random.randint(96, 106), 95, 5) for i in range(1, 32)])
+```

@@ -68,3 +68,12 @@ This section has moved here: [https://facebook.github.io/create-react-app/docs/d
 ### `npm run build` fails to minify
 
 This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+
+
+```
+def fs(a, b, c):
+...     return f'{{date: new Date("2022-05-{a}"), cost: {b}, goal: {c} }}'
+
+",".join([fs(i, random.randint(100, 250), random.randint(100, 250)) for i in range(1, 31)])
+
+```

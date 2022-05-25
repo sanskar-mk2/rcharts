@@ -13,6 +13,7 @@ import {
 } from "recharts";
 function ProductionHours(props) {
     const [data, set_data] = useState(props.data);
+    const [date, set_date] = useState(0);
 
     useEffect(() => {
         const arr = [];
@@ -33,6 +34,11 @@ function ProductionHours(props) {
             arr.push(o);
         }
         set_data([...arr]);
+        set_date(
+            arr.findIndex(
+                (e, i) => moment(e.date).format("YYYY-MM-DD") === props.date
+            )
+        );
     }, [props]);
 
     return (
@@ -41,7 +47,7 @@ function ProductionHours(props) {
                 <BarChart
                     width={500}
                     height={300}
-                    data={data.slice(0, 7)}
+                    data={data.slice(date, date+7)}
                     margin={{
                         top: 5,
                         right: 30,

@@ -35,6 +35,7 @@ body {
     font-family: 'Nunito', sans-serif;
     max-width: 100%;
     overflow: hidden;
+    background-color: var(--var1);
 }
 
 #root {
@@ -56,7 +57,7 @@ body {
 }
 
 .heading {
-    background-color: var(--var14);
+    background-color: var(--var2);
     color: var(--var7);
     font-weight: bold;
     font-size: x-large;

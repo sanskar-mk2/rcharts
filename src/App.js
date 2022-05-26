@@ -51,7 +51,6 @@ function App() {
                 </div>
                 <div className="contained efficiency-week">
                     <div className="heading">Efficiency Week</div>
-                    <h1 style={{ color: "orange" }}>WIP</h1>
                     <EfficiencyWeek data={work_data} date={date} />
                 </div>
                 <div className="contained ftes">

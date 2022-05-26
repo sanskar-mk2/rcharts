@@ -17,6 +17,8 @@ import CustomizedLabel from "./CustomizedLabel";
 
 function EfficiencyWeek(props) {
     const [sliced, set_sliced] = useState(props.data);
+    const [eff, set_eff] = useState(0);
+    const [eff_pc, set_eff_pc] = useState(1);
     const [date, set_date] = useState(0);
 
     useEffect(() => {
@@ -34,9 +36,6 @@ function EfficiencyWeek(props) {
         for (let i = 0; i < arr.length; i++) {
             for (let j = date; j < date + 7; j++) {
                 let team = arr[i].team_name;
-                console.log(arr[i]);
-                console.log(props.data[j]);
-                console.log(team);
                 arr[i]["prod"] += props.data[j][team]["prod"];
                 arr[i]["actual"] += props.data[j][team]["actual"];
             }
@@ -47,6 +46,12 @@ function EfficiencyWeek(props) {
         }
 
         set_sliced([...arr]);
+        let eff = arr.reduce((acc, curr) => acc + curr.eff, 0);
+        eff = eff / arr.length;
+        set_eff_pc(eff);
+        eff = (eff / 100) * 180;
+        eff = 180 - eff;
+        set_eff(eff);
     }, [props, date]);
 
     return (
@@ -66,14 +71,25 @@ function EfficiencyWeek(props) {
                         cy="70%"
                         innerRadius={120}
                         outerRadius={180}
-                        fill="#8884d8"
+                        fill={colors.var0}
                         // label
                     >
                         <LabelList fontSize={11} dataKey="name" />
-                         <Cell fill={colors.var8} />
-                         <Cell fill={colors.var9} />
-                         <Cell fill={colors.var11} />
+                        <Cell fill={colors.var8} />
+                        <Cell fill={colors.var9} />
+                        <Cell fill={colors.var11} />
                     </Pie>
+                    <Pie
+                        dataKey="value"
+                        startAngle={eff - 3}
+                        endAngle={eff + 2}
+                        data={[{ name: "Efficiency", value: eff_pc }]}
+                        cx="50%"
+                        cy="70%"
+                        outerRadius={200}
+                        fill={`${colors.var12}BD`}
+                        label
+                    />
                 </PieChart>
             </ResponsiveContainer>
         </>

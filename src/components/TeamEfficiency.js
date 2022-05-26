@@ -32,9 +32,6 @@ function TeamEfficiency(props) {
         for (let i = 0; i < arr.length; i++) {
             for (let j = date; j < date + 7; j++) {
                 let team = arr[i].team_name;
-                console.log(arr[i]);
-                console.log(props.data[j]);
-                console.log(team);
                 arr[i]["prod"] += props.data[j][team]["prod"];
                 arr[i]["actual"] += props.data[j][team]["actual"];
             }

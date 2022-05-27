@@ -35,7 +35,7 @@ body {
     font-family: 'Nunito', sans-serif;
     max-width: 100%;
     overflow: hidden;
-    background-color: var(--var7);
+    /* background-color: var(--var7); */
 }
 
 #root {

@@ -198,3 +198,8 @@ TypeError: 'int' object is not iterable
 ...             data[i][f"team{j}"] = {"actual": random.randint(292, 442), "prod": random.randint(257, 425)}
 ...
 ```
+
+multiple columns
+building only assign
+upload order with excel
+show/add perm in order show page
